@@ -3,14 +3,10 @@ using namespace std;
 
 int main(){
 	char j;
-	int h, m=8, _temp;
+	int h, m=8;
 	cin >> h >> j;
 	if (h > 1000)
-		if ((h-1000)%500!=0)
-			_temp = (int)(h-1000)/500+1;
-		else
-			_temp = (int)((h-1000)/500);
-		m = 8 + _temp*4;
+		m = 8 + (((h-1000)%500!=0)?(int)(h-1000)/500+1:(int)((h-1000)/500))*4;
 	if (j == 'y')
 		m = m+5;
 	cout << m;
